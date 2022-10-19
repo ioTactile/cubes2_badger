@@ -1,12 +1,10 @@
 <?php
-include_once "./components/UI/header.php";
-?>
-
-<?php
 include_once './includes/dbh.inc.php';
 $result = mysqli_query($conn, "SELECT * FROM `sessions`");
 ?>
-
+<?php
+include_once "./components/UI/header.php";
+?>
 <?php
 if (mysqli_num_rows($result) > 0) {
 ?>
@@ -28,8 +26,7 @@ if (mysqli_num_rows($result) > 0) {
                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">Salle</th>
                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">Référant</th>
                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">Promotion</th>
-                <th scope="col" class="text-sm font-medium text-white px-6 py-4">Début</th>
-                <th scope="col" class="text-sm font-medium text-white px-6 py-4">Fin</th>
+                <th scope="col" class="text-sm font-medium text-white px-6 py-4">Période</th>
                 <th scope="col" class="text-sm font-medium text-white px-6 py-4">Action</th>
               </thead class="border-b">
               <tbody>
@@ -42,8 +39,7 @@ if (mysqli_num_rows($result) > 0) {
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><?= $session["classroom"] ?></td>
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><?= $session["referer"] ?></td>
                     <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><?= $session["promotion_id"] ?></td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><?= $session["start_at"] ?></td>
-                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><?= $session["end_at"] ?></td>
+                    <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap"><?= $session["start_at"] ?><?= $session["end_at"] ?></td>
                     <td class="flex px-6 py-4 justify-center">
                       <a href="./updatesessions.php?id=<?php echo $session["id"]; ?>" title='Update Record'><svg width="20" height="20" viewBox="0 0 24 24">
                           <path fill="#404040" d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z" />
