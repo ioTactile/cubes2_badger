@@ -1,14 +1,10 @@
 <?php
-include_once "./components/UI/header.php";
-?>
-
-<?php
 require_once './includes/dbh.inc.php';
 if (count($_POST) > 0) {
   mysqli_query($conn, "UPDATE students set school_id='" . $_POST['school_id'] .
     "' ,lastname='" . $_POST['lastname'] .
     "' ,firstname='" . $_POST['firstname'] .
-    "' ,email='" . $_POST['email'] .
+    "' ,emaik='" . $_POST['email'] .
     "' WHERE id='" . $_POST['id'] . "'");
   header("location: /students.php");
   exit();
@@ -18,7 +14,9 @@ $result = mysqli_query($conn, $sql);
 $student = mysqli_fetch_array($result);
 ?>
 
-
+<?php
+include_once "./components/UI/header.php";
+?>
 
 <section>
 

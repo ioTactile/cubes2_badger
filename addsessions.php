@@ -1,7 +1,4 @@
 <?php
-include_once "./components/UI/header.php";
-?>
-<?php
 require_once "./includes/dbh.inc.php";
 if (isset($_POST['save'])) {
   $title = $_POST['title'];
@@ -24,7 +21,9 @@ if (isset($_POST['save'])) {
   mysqli_close($conn);
 }
 ?>
-
+<?php
+include_once "./components/UI/header.php";
+?>
 <div>
   <section>
     <div class="flex items-center justify-center w-[100%] bg-neutral-200 py-4">
