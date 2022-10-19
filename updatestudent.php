@@ -4,7 +4,7 @@ if (count($_POST) > 0) {
   mysqli_query($conn, "UPDATE students set school_id='" . $_POST['school_id'] .
     "' ,lastname='" . $_POST['lastname'] .
     "' ,firstname='" . $_POST['firstname'] .
-    "' ,emaik='" . $_POST['email'] .
+    "' ,email='" . $_POST['email'] .
     "' WHERE id='" . $_POST['id'] . "'");
   header("location: /students.php");
   exit();
