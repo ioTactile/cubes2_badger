@@ -55,7 +55,7 @@ include_once "./components/UI/header.php";
 
         </div>
     </form>
-    <div class="mt-4 text-red-500 text-xl">
+    <div class="mt-4 text-red-500 text-2xl">
         <?php
         if (isset($_GET["error"])) {
             if ($_GET["error"] == "emptyinput") {
