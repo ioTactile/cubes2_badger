@@ -60,7 +60,7 @@ if (!isset($_SESSION["useruid"])) {
     <ul class="h-full flex flex-col gap-y-2 text-sm">
 
       <li class="text-center pb-3 hover:text-sky-400">
-        <a class="navLinks flex items-center justify-center" href="#emploidutemps">Emploi du temps</a>
+        <a class="navLinks flex items-center justify-center" href="/Schedule.php">Emploi du temps</a>
       </li>
 
       <HR class="w-1/2 self-center">
