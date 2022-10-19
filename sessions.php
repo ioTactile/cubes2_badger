@@ -1,10 +1,12 @@
 <?php
+include_once "./components/UI/header.php";
+?>
+
+<?php
 include_once './includes/dbh.inc.php';
 $result = mysqli_query($conn, "SELECT * FROM `sessions`");
 ?>
-<?php
-include_once "./components/UI/header.php";
-?>
+
 <?php
 if (mysqli_num_rows($result) > 0) {
 ?>

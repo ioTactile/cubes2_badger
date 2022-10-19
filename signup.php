@@ -1,8 +1,8 @@
 <?php
-include_once "./components/UI/header_register.php";
+include_once "./components/UI/header.php";
 ?>
 
-    
+
 
 <div class="flex flex-col justify-center items-center w-full h-full">
     <form class="shadow-sm shadow-black bg-gray-500/5" action="includes/signup.inc.php" method="POST">
@@ -51,7 +51,7 @@ include_once "./components/UI/header_register.php";
                 <option value="admin">Admin</option>
             </select>
 
-            <button class="p-2 bg-gray-500/20 text-white hover:bg-sky-500/40 active:bg-sky-500/60" name="submit" type="submit">S'inscrire</button>
+            <button class="p-2 bg-gray-500/20 text-white hover:bg-sky-500/40 active:bg-sky-500/60" name="submit" type="submit">Créer un utilisateur</button>
 
         </div>
     </form>
@@ -67,9 +67,11 @@ include_once "./components/UI/header_register.php";
             echo "<p>Mots de passe non identique</p>";
         } else if ($_GET["error"] == "stmtfailed") {
             echo "<p>Erreur non connue, reassayer</p>";
-        } else if ($_GET["error"] == "none") {
-            echo "<button><a href='./index.php'>Se connecter</a></button>";
         }
+
+        // else if ($_GET["error"] == "none") {
+        //     echo "<button><a href='./index.php'>Se connecter</a></button>";
+        // }
     }
     ?>
 </div>

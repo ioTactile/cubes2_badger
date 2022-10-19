@@ -1,4 +1,7 @@
 <?php
+include_once "./components/UI/header.php";
+?>
+<?php
 require_once "./includes/dbh.inc.php";
 if (isset($_POST['save'])) {
   $school_id = $_POST['school_id'];
@@ -16,9 +19,7 @@ if (isset($_POST['save'])) {
   mysqli_close($conn);
 }
 ?>
-<?php
-include_once "./components/UI/header.php";
-?>
+
 <div>
   <section>
 
