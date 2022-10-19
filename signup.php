@@ -6,7 +6,7 @@ include_once "./components/UI/header.php";
 
 <div class="flex flex-col justify-center items-center w-full h-full">
     <form class="shadow-sm shadow-black bg-gray-500/5" action="includes/signup.inc.php" method="POST">
-        <h2 class="p-2 text-center bg-gray-500/10 text-white text-xl">Créer un compte</h2>
+        <h2 class="p-2 text-center bg-neutral-700 text-white text-xl">Créer un compte</h2>
         <div class="p-4 flex flex-col gap-2 w-full">
 
             <div class="flex flex-row justify-between">
@@ -51,29 +51,31 @@ include_once "./components/UI/header.php";
                 <option value="admin">Admin</option>
             </select>
 
-            <button class="p-2 bg-gray-500/20 text-white hover:bg-sky-500/40 active:bg-sky-500/60" name="submit" type="submit">Créer un utilisateur</button>
+            <button class="p-2 bg-neutral-700 text-white hover:bg-sky-500 active:bg-sky-500" name="submit" type="submit">Créer un utilisateur</button>
 
         </div>
     </form>
-    <?php
-    if (isset($_GET["error"])) {
-        if ($_GET["error"] == "emptyinput") {
-            echo "<p>Remplissez tous les champs</p>";
-        } else if ($_GET["error"] == "invaliduid") {
-            echo "<p>Nom d'utilisateur non disponible</p>";
-        } else if ($_GET["error"] == "invalidemail") {
-            echo "<p>Votre adresse email n'est pas valide</p>";
-        } else if ($_GET["error"] == "passwordsdontmatch") {
-            echo "<p>Mots de passe non identique</p>";
-        } else if ($_GET["error"] == "stmtfailed") {
-            echo "<p>Erreur non connue, reassayer</p>";
-        }
+    <div class="mt-4 text-red-500 text-xl">
+        <?php
+        if (isset($_GET["error"])) {
+            if ($_GET["error"] == "emptyinput") {
+                echo "<p>Remplissez tous les champs</p>";
+            } else if ($_GET["error"] == "invaliduid") {
+                echo "<p>Nom d'utilisateur non disponible</p>";
+            } else if ($_GET["error"] == "invalidemail") {
+                echo "<p>Votre adresse email n'est pas valide</p>";
+            } else if ($_GET["error"] == "passwordsdontmatch") {
+                echo "<p>Mots de passe non identique</p>";
+            } else if ($_GET["error"] == "stmtfailed") {
+                echo "<p>Erreur non connue, reassayer</p>";
+            }
 
-        // else if ($_GET["error"] == "none") {
-        //     echo "<button><a href='./index.php'>Se connecter</a></button>";
-        // }
-    }
-    ?>
+            // else if ($_GET["error"] == "none") {
+            //     echo "<button><a href='./index.php'>Se connecter</a></button>";
+            // }
+        }
+        ?>
+    </div>
 </div>
 </body>
 
