@@ -9,11 +9,11 @@ include_once "./components/UI/header.php";
   </div>
   <table class="fixed w-full lg:w-[83%]">
     <thead class="border-b bg-neutral-700">
-      <th scope="col" class="text-sm font-medium text-white px-6 py-4">Numéro</th>
-      <th scope="col" class="text-sm font-medium text-white px-6 py-4">Nom</th>
-      <th scope="col" class="text-sm font-medium text-white px-6 py-4">Prénom</th>
-      <th scope="col" class="text-sm font-medium text-white px-6 py-4">Email</th>
-      <th scope="col" class="text-sm font-medium text-white px-6 py-4">Action</th>
+      <th scope="col" class="banner">Numéro</th>
+      <th scope="col" class="banner">Nom</th>
+      <th scope="col" class="banner">Prénom</th>
+      <th scope="col" class="banner hidden md:block">Email</th>
+      <th scope="col" class="banner">Action</th>
     </thead>
   </table>
 </div>
@@ -35,7 +35,7 @@ if (mysqli_num_rows($result) > 0) {
           <td class="inBanner"><?= $student["school_id"] ?></td>
           <td class="inBanner"><?= $student["lastname"] ?></td>
           <td class="inBanner"><?= $student["firstname"] ?></td>
-          <td class="inBanner"><?= $student["email"] ?></td>
+          <td class="md:inBanner hidden md:inline-table"><?= $student["email"] ?></td>
           <td class="inBanner">
             <div class="flex items-center justify-center">
               <a href="./updatestudent.php?id=<?php echo $student["id"]; ?>" title="Modifier"><svg width="20" height="20" viewBox="0 0 24 24">
