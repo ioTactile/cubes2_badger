@@ -1,5 +1,9 @@
 <?php
 session_start();
+if (!isset($_SESSION["useruid"])) {
+  header("Location: /index.php");
+  die();
+}
 ?>
 
 <!DOCTYPE html>
@@ -84,6 +88,13 @@ session_start();
 
       <li class="text-center py-3 hover:text-sky-400">
         <a class="navLinks" href="/sessions.php">Gestion des cours</a>
+      </li>
+
+      <HR class="w-1/2 self-center">
+      </HR>
+
+      <li class="text-center py-3 hover:text-sky-400">
+        <a class="navLinks" href="/signup.php">Créer un utilisateur</a>
       </li>
 
       <HR class="w-1/2 self-center">
