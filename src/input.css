@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .banner {
+    @apply text-sm font-medium text-white py-4 w-[25%] md:w-[20%];
+  }
+
+  .inBanner {
+    @apply text-sm text-gray-900 font-light py-4 w-[25%] md:w-[20%];
+  }
+}
