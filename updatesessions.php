@@ -1,8 +1,4 @@
 <?php
-include_once "./components/UI/header.php";
-?>
-
-<?php
 require_once './includes/dbh.inc.php';
 if (count($_POST) > 0) {
     mysqli_query($conn, "UPDATE `sessions` set title='" . $_POST['title'] .
@@ -21,7 +17,9 @@ $result = mysqli_query($conn, $sql);
 $session = mysqli_fetch_array($result);
 ?>
 
-
+<?php
+include_once "./components/UI/header.php";
+?>
 
 <section>
 

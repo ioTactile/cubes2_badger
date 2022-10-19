@@ -1,7 +1,4 @@
 <?php
-include_once "./components/UI/header.php";
-?>
-<?php
 require_once "./includes/dbh.inc.php";
 if (isset($_POST['save'])) {
   $name = $_POST['name'];
@@ -20,8 +17,18 @@ if (isset($_POST['save'])) {
   mysqli_close($conn);
 }
 ?>
-<div>
+<?php
+include_once "./components/UI/header.php";
+?>
   <section>
+    <form class="bg-red-600" action="">
+    <th scope="col" class="text-sm font-medium text-white px-6 py-4">
+                <label for=name>Nom</label>
+    </th>
+
+    </form>
+  </section>
+  <!-- <section>
 
     <div class="flex items-center justify-center w-[100%] bg-neutral-200 py-4">
       <h2 class="text-xl text-bold">Ajouter une promotion </h2>
@@ -96,7 +103,7 @@ if (isset($_POST['save'])) {
     </div>
   </section>
 </div>
-</section>
+</section> -->
 </main>
 </body>
 <script src="./src/main.js"></script>

@@ -103,4 +103,4 @@ if (!isset($_SESSION["useruid"])) {
     </ul>
   </nav>
 
-  <main class="relative h-full mt-20 ml-[17%] w-[83%]">
+  <main class="relative h-full w-full lg:ml-[17%] lg:w-[83%]">

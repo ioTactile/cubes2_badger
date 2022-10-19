@@ -40,7 +40,7 @@ include_once "./components/UI/header.php";
         <td class="inBanner"><?= $promo["name"] ?></td>
         <td class="inBanner"><?= $promo["reference"] ?></td>
         <td class="inBanner"><?= $promo["referer"] ?></td>
-        <td class="md:inBanner hidden md:inline-table"><?= $promo["start_at"] ?><?= $promo["finished_at"]?></td>
+        <td class="md:inBanner hidden md:inline-table"><?= $promo["start_at"] ?></br><?= $promo["finished_at"]?></td>
         <td class="inBanner">
           <div class="flex items-center justify-center">
             <a href="./updatepromotion.php?id=<?php echo $promo["id"]; ?>" title="Modifier">
