@@ -23,7 +23,10 @@ if (!isset($_SESSION["useruid"])) {
 
 <body class="h-screen flex overflow-x-hidden">
   <header id="header" class="fixed w-full h-20 bg-white shadow-sm shadow-black z-10 flex justify-between items-center">
-    <a class="h-full" href="../home.php">
+    <a href="">
+      <img class="w-32" src="../../assets/cesi-logo.png" alt="">
+    </a>
+    <a class="h-1/6 w-1/6" href="../home.php">
       <img class="p-4 h-20" src="https://www.cesi.fr/wp-content/themes/cesi/static/logo/default.svg" alt="" />
     </a>
     <div class="flex items-center gap-6 p-4">
