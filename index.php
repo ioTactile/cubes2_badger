@@ -3,7 +3,7 @@ include_once "./components/UI/header_register.php";
 ?>
 <div class="flex flex-col justify-center items-center w-full h-full">
   <form class="w-80 shadow-sm shadow-black bg-gray-500/5 md:w-96" action="includes/login.inc.php" method="POST">
-    <h2 class="p-2 text-center bg-gray-500/10 text-white text-xl">Portail de connexion</h2>
+    <h2 class="">Portail de connexion</h2>
     <div class="p-4 flex flex-col gap-2">
       <label class="pt-2" for="email">Adresse e-mail / Nom d'utilisateur</label>
       <input class="p-2 mb-8 border border-neutral-400 text-black" type="text" placeholder="exemple@viacesi.fr / exemple" name="uid">
