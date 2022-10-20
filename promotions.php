@@ -5,11 +5,11 @@ include_once "./components/UI/header.php";
 
   <div class="fixed mt-20 w-full lg:w-[83%]">
     <div class="grid grid-cols-6">
-      <h2 class="col-span-4 md:text-xl text-bold bg-white py-3 px-6 text-lg flex items-center justify-center">Liste des promotions </h2>
-      <button class="col-span-2 bg-emerald-700 text-white py-3 px-6 cursor-pointer text-sm md:text-lg"><a href=" ./addpromotion.php">Ajouter une promotion</a></button>
+      <h2 class="col-span-4 md:text-xl text-bold bg-white py-3 px-6 text-lg flex items-center justify-center border-r border-neutral-700">Liste des promotions </h2>
+      <button class="col-span-2 bg-yellow-400 text-black py-3 px-6 cursor-pointer text-sm md:text-lg"><a href=" ./addpromotion.php">Ajouter une promotion</a></button>
     </div>
     <table class="fixed w-full lg:w-[83%] ">
-      <thead class="border-b bg-neutral-700">
+      <thead class="border-b border-t border-neutral-700 bg-white">
         <tr class="flex justify-between items-center">
           <th class="banner">Nom</th>
           <th class="banner">Référence</th>
@@ -17,8 +17,8 @@ include_once "./components/UI/header.php";
           <th class="banner hidden md:block">Période</th>
           <th class="banner">Action</th>
         </tr>
-        </thead>
-      </table>   
+      </thead>
+    </table>   
   </div>
 
   <?php
@@ -35,7 +35,7 @@ include_once "./components/UI/header.php";
     while ($promo = mysqli_fetch_array($result)) {
   ?>
 
-      <tbody>
+    <tbody>
       <tr  class="bg-white border-b text-center flex justify-between items-center" >
         <td class="inBanner"><?= $promo["name"] ?></td>
         <td class="inBanner"><?= $promo["reference"] ?></td>
@@ -55,16 +55,16 @@ include_once "./components/UI/header.php";
             </a>
           </div>
         </td>
-        </tr>
+      </tr>
   <?php $i++; } ?>
-     </tbody>
-    </table>
+    </tbody>
+  </table>
 
-          <?php
-          } else {
-            echo "No result found";
-          }
-          ?>
+  <?php
+    } else {
+    echo "No result found";
+    }
+  ?>
 </main>
 </body>
 <script src="./src/main.js"></script>

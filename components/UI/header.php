@@ -22,7 +22,7 @@ if (!isset($_SESSION["useruid"])) {
 </head>
 
 <body class="h-screen flex overflow-x-hidden">
-  <header id="header" class="fixed w-full h-20 bg-white shadow-sm shadow-black z-10 flex justify-between items-center">
+  <header id="header" class="fixed w-full h-20 bg-white shadow-sm shadow-black z-[15] flex justify-between items-center">
     <a href="">
       <img class="w-32" src="../../assets/cesi-logo.png" alt="">
     </a>
@@ -59,51 +59,52 @@ if (!isset($_SESSION["useruid"])) {
     </div>
   </header>
 
-  <nav id="navBar" class="hidden fixed lg:block bg-neutral-700 w-full h-full text-white pt-12 mt-20 z-10 lg:w-[17%]">
-    <ul class="h-full flex flex-col gap-y-2 text-sm">
+  <nav id="navBar" class="hidden bg-white fixed lg:block w-full h-full text-black border-r border-neutral-700 pt-12 mt-20 z-10 lg:w-[17%]">
+    <ul class="h-full flex flex-col gap-y-2 text-md">
 
-      <li class="text-center pb-3 hover:text-sky-400">
+      <li class="text-center pb-3 hover:text-yellow-400">
         <a class="navLinks flex items-center justify-center" href="#emploidutemps">Emploi du temps</a>
       </li>
 
       <HR class="w-1/2 self-center">
       </HR>
 
-      <li class="text-center py-3 hover:text-sky-400">
+      <li class="text-center py-3 hover:text-yellow-400">
         <a class="navLinks" href="#Validationdesprésences">Validations des présences</a>
       </li>
 
       <HR class="w-1/2 self-center">
       </HR>
 
-      <li class="text-center py-3 hover:text-sky-400">
+      <li class="text-center py-3 hover:text-yellow-400">
         <a class="navLinks" href="/students.php">Gestion des apprenants</a>
       </li>
 
       <HR class="w-1/2 self-center">
       </HR>
 
-      <li class="text-center py-3 hover:text-sky-400">
+      <li class="text-center py-3 hover:text-yellow-400">
         <a class="navLinks" href="/promotions.php">Gestion des promotions</a>
       </li>
       <HR class="w-1/2 self-center">
       </HR>
 
-      <li class="text-center py-3 hover:text-sky-400">
+      <li class="text-center py-3 hover:text-yellow-400">
         <a class="navLinks" href="/sessions.php">Gestion des cours</a>
       </li>
 
       <HR class="w-1/2 self-center">
       </HR>
 
-      <li class="text-center py-3 hover:text-sky-400">
+      <li class="text-center py-3 hover:text-yellow-400">
         <a class="navLinks" href="/signup.php">Créer un utilisateur</a>
       </li>
 
       <HR class="w-1/2 self-center">
       </HR>
 
-    </ul>
+      </ul>
+      
   </nav>
 
   <main class="relative h-full w-full lg:ml-[17%] lg:w-[83%]">
