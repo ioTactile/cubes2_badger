@@ -5,11 +5,11 @@ include_once "./components/UI/header.php";
 
 <div class="fixed mt-20 w-full lg:w-[83%]">
   <div class="grid grid-cols-6">
-    <h2 class="col-span-4 md:text-xl text-bold bg-white py-3 px-6 text-lg flex items-center justify-center">Liste des promotions </h2>
-    <button class="col-span-2 bg-emerald-700 text-white py-3 px-6 cursor-pointer text-sm md:text-lg"><a href=" ./addpromotion.php">Ajouter une promotion</a></button>
+    <h2 class="col-span-4 md:text-xl text-bold bg-white py-3 px-6 text-lg flex items-center justify-center border-r border-neutral-700">Liste des promotions </h2>
+    <button class="col-span-2 bg-yellow-400 text-black py-3 px-6 cursor-pointer text-sm md:text-lg"><a href=" ./addpromotion.php">Ajouter une promotion</a></button>
   </div>
-  <table class="fixed w-full lg:w-[83%]">
-    <thead class="border-b bg-neutral-700">
+  <table class="fixed w-full lg:w-[83%] ">
+    <thead class="border-b border-t border-neutral-700 bg-white">
       <tr class="flex justify-between items-center">
         <th class="banner">Nom</th>
         <th class="banner">Référence</th>
@@ -25,6 +25,7 @@ include_once "./components/UI/header.php";
 include_once './includes/dbh.inc.php';
 $result = mysqli_query($conn, "SELECT * FROM `promotions`");
 ?>
+
 <?php
 if (mysqli_num_rows($result) > 0) {
 ?>
@@ -33,6 +34,7 @@ if (mysqli_num_rows($result) > 0) {
     $i = 0;
     while ($promo = mysqli_fetch_array($result)) {
     ?>
+
       <tbody>
         <tr class="bg-white border-b text-center flex justify-between items-center">
           <td class="inBanner"><?= $promo["name"] ?></td>
@@ -58,6 +60,7 @@ if (mysqli_num_rows($result) > 0) {
     } ?>
       </tbody>
   </table>
+
 <?php
 } else {
   echo "No result found";
@@ -65,5 +68,6 @@ if (mysqli_num_rows($result) > 0) {
 ?>
 </main>
 </body>
+<script src="./src/main.js"></script>
 
 </html>

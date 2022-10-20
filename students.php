@@ -2,18 +2,21 @@
 include_once "./components/UI/header.php";
 ?>
 
+
 <div class="fixed mt-20 w-full lg:w-[83%]">
   <div class="grid grid-cols-6">
-    <h2 class="col-span-4 md:text-xl text-bold bg-white py-3 px-6 text-lg flex items-center justify-center">Liste des apprenants </h2>
-    <button class="col-span-2 bg-emerald-700 text-white py-3 px-6 cursor-pointer text-sm md:text-lg"><a href=" ./addstudent.php">Ajouter un apprenant</a></button>
+    <h2 class="col-span-4 md:text-xl text-bold bg-white py-3 px-6 text-lg flex items-center justify-center border-r border-neutral-700">Liste des apprenants </h2>
+    <button class="col-span-2 bg-yellow-400 text-black py-3 px-6 cursor-pointer text-sm md:text-lg"><a href=" ./addstudent.php">Ajouter un apprenant</a></button>
   </div>
-  <table class="fixed w-full lg:w-[83%]">
-    <thead class="border-b bg-neutral-700">
-      <th scope="col" class="banner">Numéro</th>
-      <th scope="col" class="banner">Nom</th>
-      <th scope="col" class="banner">Prénom</th>
-      <th scope="col" class="banner hidden md:block">Email</th>
-      <th scope="col" class="banner">Action</th>
+  <table class="fixed w-full lg:w-[83%] ">
+    <thead class="border-b border-t border-neutral-700 bg-white">
+      <tr class="flex justify-between items-center">
+        <th class="banner">Numéro</th>
+        <th class="banner">Nom</th>
+        <th class="banner">Prénom</th>
+        <th class="banner">Email</th>
+        <th class="banner">Action</th>
+      </tr>
     </thead>
   </table>
 </div>
@@ -22,9 +25,11 @@ include_once "./components/UI/header.php";
 include_once './includes/dbh.inc.php';
 $result = mysqli_query($conn, "SELECT * FROM `students`");
 ?>
+
 <?php
 if (mysqli_num_rows($result) > 0) {
 ?>
+
   <table class="w-full mt-[11.5rem]">
     <?php
     $i = 0;
@@ -35,7 +40,7 @@ if (mysqli_num_rows($result) > 0) {
           <td class="inBanner"><?= $student["school_id"] ?></td>
           <td class="inBanner"><?= $student["lastname"] ?></td>
           <td class="inBanner"><?= $student["firstname"] ?></td>
-          <td class="md:inBanner hidden md:inline-table"><?= $student["email"] ?></td>
+          <td class="inBanner"><?= $student["email"] ?></td>
           <td class="inBanner">
             <div class="flex items-center justify-center">
               <a href="./updatestudent.php?id=<?php echo $student["id"]; ?>" title="Modifier"><svg width="20" height="20" viewBox="0 0 24 24">
@@ -60,5 +65,6 @@ if (mysqli_num_rows($result) > 0) {
 ?>
 </main>
 </body>
+<script src="./src/main.js"></script>
 
 </html>

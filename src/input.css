@@ -4,7 +4,7 @@
 
 @layer components {
   .banner {
-    @apply text-sm font-medium text-white py-4 w-[25%] md:w-[20%];
+    @apply text-sm font-medium lg:text-lg text-black py-2 w-[25%] md:w-[20%];
   }
 
   .inBanner {
