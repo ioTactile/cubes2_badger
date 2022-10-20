@@ -19,74 +19,29 @@ include_once "./components/UI/header.php";
 ?>
 
 <section>
-
-  <div class="flex items-center justify-center w-[100%] bg-neutral-200 py-4">
-    <h2 class="text-xl text-bold">Modifier l'apprenant: <?php echo $student['firstname'] . " " . $student['lastname']; ?></h2>
-  </div>
-
-  <div class="overflow-x-auto sm:-sx-6 lg:-mx-8">
-    <div class=" inline-block min-w-full sm:-px-6 lg:px-8">
-      <table class="min-w-full">
-        <form action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="POST">
-
-          <thead class="border-b bg-neutral-700">
-
-            <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-              <label for=name>Numéro</label>
-            </th>
-
-            <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-              <label for=reference>Nom</label>
-            </th>
-
-            <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-              <label for=referer>Prénom</label>
-            </th>
-
-            <th scope="col" class="text-sm font-medium text-white px-6 py-4">
-              <label for=start_at>Email</label>
-            </th>
-
-          </thead class="border-b">
-
-          <tbody>
-
-            <tr class="bg-white border-b">
-
-              <td class="text-sm text-gray-900 font-light px-6 py-4 ">
-                <input type="text" id="school_id" name="school_id" value="<?php echo $student["school_id"]; ?>" required=""></input>
-              </td>
-
-              <td class="text-sm text-gray-900 font-light px-6 py-4 ">
-                <input type="text" id="lastname" name="lastname" value="<?php echo $student["lastname"]; ?>" required=""></input>
-              </td>
-
-              <td class="text-sm text-gray-900 font-light px-6 py-4 ">
-                <input type="text" id="firstname" name="firstname" value="<?php echo $student["firstname"]; ?>" required=""></input>
-              </td>
-
-              <td class="text-sm text-gray-900 font-light px-6 py-4 ">
-                <input type="email" id="email" name="email" value="<?php echo $student["email"]; ?>" required=""></input>
-              </td>
-
-            </tr>
-          </tbody>
-
-      </table>
-
-      <div class="flex justify-end bg-neutral-200">
-        <input type="hidden" name="id" value="<?php echo $student["id"]; ?>" />
-        <input class="bg-red-700 text-white py-4 px-14 cursor-pointer" type="button" value="Annuler" onclick="location.href='./students.php';" />
-        <input class="bg-emerald-700 text-white py-4 px-14 cursor-pointer " type="submit" value="Modifier">
+  <div class="flex flex-col justify-center items-center w-full h-full pt-20">
+    <form class=" w-80 shadow-sm shadow-black bg-gray-500/5 md:w-96" action="<?php echo htmlspecialchars(basename($_SERVER['REQUEST_URI'])); ?>" method="POST">
+      <h2 class="p-2 text-center bg-neutral-700 text-white text-xl">Modifier l'apprenant: <?php echo $student['firstname'] . " " . $student['lastname']; ?></h2>
+      <div class="p-4 flex flex-col gap-2">
+        <label class="pt-2" for=name>Numéro</label>
+        <input class="p-2 mb-8 border border-neutral-400 text-black" type="text" id="school_id" name="school_id" value="<?php echo $student["school_id"]; ?>" required=""></input>
+        <label for=reference>Nom</label>
+        <input class="p-2 mb-8 border border-neutral-400 text-black" type="text" id="lastname" name="lastname" value="<?php echo $student["lastname"]; ?>" required=""></input>
+        <label for=referer>Prénom</label>
+        <input class="p-2 mb-8 border border-neutral-400 text-black" type="text" id="firstname" name="firstname" value="<?php echo $student["firstname"]; ?>" required=""></input>
+        <label for=start_at>Email</label>
+        <input class="p-2 mb-8 border border-neutral-400 text-black" type="email" id="email" name="email" value="<?php echo $student["email"]; ?>" required=""></input>
       </div>
-      </form>
+    </form>
+    <div class="w-80 flex flex-col shadow-sm shadow-black bg-gray-500/5 md:w-96">
+      <input type="hidden" name="id" value="<?php echo $student["id"]; ?>" />
+      <input class="bg-red-700 text-white py-4 px-14 cursor-pointer" type="button" value="Annuler" onclick="location.href='./students.php';" />
+      <input class="bg-emerald-700 text-white py-4 px-14 cursor-pointer " type="submit" value="Modifier">
     </div>
   </div>
 </section>
 
-</section>
 </main>
 </body>
-<script src="./src/main.js"></script>
 
 </html>
