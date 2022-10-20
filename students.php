@@ -14,7 +14,7 @@ include_once "./components/UI/header.php";
         <th class="banner">Numéro</th>
         <th class="banner">Nom</th>
         <th class="banner">Prénom</th>
-        <th class="banner">Email</th>
+        <th class="banner hidden md:block">Email</th>
         <th class="banner">Action</th>
       </tr>
     </thead>
@@ -40,7 +40,7 @@ if (mysqli_num_rows($result) > 0) {
           <td class="inBanner"><?= $student["school_id"] ?></td>
           <td class="inBanner"><?= $student["lastname"] ?></td>
           <td class="inBanner"><?= $student["firstname"] ?></td>
-          <td class="inBanner"><?= $student["email"] ?></td>
+          <td class="md:inBanner hidden md:inline-table"><?= $student["email"] ?></td>
           <td class="inBanner">
             <div class="flex items-center justify-center">
               <a href="./updatestudent.php?id=<?php echo $student["id"]; ?>" title="Modifier"><svg width="20" height="20" viewBox="0 0 24 24">

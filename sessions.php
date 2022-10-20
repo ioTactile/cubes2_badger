@@ -14,7 +14,7 @@ include_once "./components/UI/header.php";
         <th class="banner">Salle</th>
         <th class="banner">Référant</th>
         <th class="banner">Promotion</th>
-        <th class="banner">Période</th>
+        <th class="banner hidden md:block">Période</th>
         <th class="banner">Action</th>
       </tr>
     </thead>
@@ -40,7 +40,7 @@ if (mysqli_num_rows($result) > 0) {
           <td class="inBanner"><?= $session["classroom"] ?></td>
           <td class="inBanner"><?= $session["referer"] ?></td>
           <td class="inBanner"><?= $session["promotion_id"] ?></td>
-          <td class="inBanner"><?= $session["start_at"] ?></br><?= $session["end_at"] ?></td>
+          <td class="md:inBanner hidden md:inline-table"><?= $session["start_at"] ?></br><?= $session["end_at"] ?></td>
           <td class="inBanner">
             <div class="flex items-center justify-center">
               <a href="./updatesessions.php?id=<?php echo $session["id"]; ?>" title='Update Record'><svg width="20" height="20" viewBox="0 0 24 24">
